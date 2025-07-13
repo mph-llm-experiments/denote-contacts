@@ -2,15 +2,14 @@
 
 # Binary name
 BINARY_NAME=denote-contacts
-MAIN_PATH=./cmd/main.go
 
 # Build the binary
 build:
-	go build -o $(BINARY_NAME) $(MAIN_PATH)
+	go build -o $(BINARY_NAME) .
 
 # Install to GOPATH/bin
-install: build
-	go install $(MAIN_PATH)
+install:
+	go install .
 
 # Install to /usr/local/bin (requires sudo)
 install-system: build
@@ -40,7 +39,7 @@ setup-config:
 
 # Build for multiple platforms
 build-all:
-	GOOS=darwin GOARCH=amd64 go build -o $(BINARY_NAME)-darwin-amd64 $(MAIN_PATH)
-	GOOS=darwin GOARCH=arm64 go build -o $(BINARY_NAME)-darwin-arm64 $(MAIN_PATH)
-	GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME)-linux-amd64 $(MAIN_PATH)
-	GOOS=linux GOARCH=arm64 go build -o $(BINARY_NAME)-linux-arm64 $(MAIN_PATH)
+	GOOS=darwin GOARCH=amd64 go build -o $(BINARY_NAME)-darwin-amd64 .
+	GOOS=darwin GOARCH=arm64 go build -o $(BINARY_NAME)-darwin-arm64 .
+	GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME)-linux-amd64 .
+	GOOS=linux GOARCH=arm64 go build -o $(BINARY_NAME)-linux-arm64 .

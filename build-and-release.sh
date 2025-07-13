@@ -60,7 +60,7 @@ fi
 
 # Build the binary
 echo "Building for $OS/$ARCH..."
-go build -o "dist/denote-contacts" ./cmd/main.go
+go build -o "dist/denote-contacts" .
 
 # Create archive
 ARCHIVE_NAME="denote-contacts_${VERSION}_${OS}_${ARCH}.tar.gz"

@@ -5,13 +5,7 @@
 If you have Go installed and want to install directly from GitHub:
 
 ```bash
-go install github.com/mph-llm-experiments/denote-contacts/cmd@latest
-```
-
-Note: The binary will be installed as `cmd`. You may want to rename it:
-
-```bash
-mv $(go env GOPATH)/bin/cmd $(go env GOPATH)/bin/denote-contacts
+go install github.com/mph-llm-experiments/denote-contacts@latest
 ```
 
 ## Build from Source
@@ -29,7 +23,7 @@ cd denote-contacts
 
 2. Build the binary:
 ```bash
-go build -o denote-contacts ./cmd/main.go
+go build -o denote-contacts .
 ```
 
 3. Install to your PATH:
@@ -73,12 +67,12 @@ To update to the latest version:
 
 ```bash
 # If installed with go install
-go install github.com/mph-llm-experiments/denote-contacts/cmd@latest
+go install github.com/mph-llm-experiments/denote-contacts@latest
 
 # If built from source
 cd denote-contacts
 git pull
-go build -o denote-contacts ./cmd/main.go
+go build -o denote-contacts .
 # Then copy to your installation location
 ```
 
