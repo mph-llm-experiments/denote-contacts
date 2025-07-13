@@ -36,13 +36,13 @@ denote-contacts provides a streamlined TUI (Terminal User Interface) for managin
 ## Installation
 
 ```bash
-go install github.com/pdxmph/denote-contacts@latest
+go install github.com/mph-llm-experiments/denote-contacts@latest
 ```
 
 Or clone and build:
 
 ```bash
-git clone https://github.com/pdxmph/denote-contacts.git
+git clone https://github.com/mph-llm-experiments/denote-contacts.git
 cd denote-contacts
 go build
 ```
