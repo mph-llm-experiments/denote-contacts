@@ -1,0 +1,6 @@
+# denote-contacts configuration file
+# Copy this file to ~/.config/denote-contacts/config.toml and customize
+
+# Directory where your denote contact files are stored
+# Use full path or ~ for home directory
+notes_directory = "~/Documents/denote"

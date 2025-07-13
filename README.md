@@ -47,6 +47,35 @@ cd denote-contacts
 go build
 ```
 
+## Configuration
+
+denote-contacts uses a TOML configuration file for settings. The config file should be placed at:
+
+```
+~/.config/denote-contacts/config.toml
+```
+
+### Example Configuration
+
+```toml
+# Directory where your denote contact files are stored
+# Use full path or ~ for home directory
+notes_directory = "~/Documents/denote"
+```
+
+Copy `config.toml.example` from the project root to get started:
+
+```bash
+mkdir -p ~/.config/denote-contacts
+cp config.toml.example ~/.config/denote-contacts/config.toml
+```
+
+### Configuration Priority
+
+1. Environment variable `DENOTE_CONTACTS_DIR` (highest priority)
+2. Config file setting `notes_directory`
+3. Default: `~/Documents/denote` (lowest priority)
+
 ## Usage
 
 ```bash

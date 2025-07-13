@@ -1,1 +1,32 @@
 contacts-data/
+
+# Binaries
+denote-contacts
+*.exe
+
+# Build artifacts
+dist/
+build/
+
+# Test files
+test*.sh
+test*.md
+*.test
+
+# Go build cache
+*.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (local only)
+config.toml
+!config.toml.example

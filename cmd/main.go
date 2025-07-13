@@ -6,6 +6,7 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/mph-llm-experiments/denote-contacts/internal/config"
 	"github.com/mph-llm-experiments/denote-contacts/internal/ui"
 )
 
@@ -15,13 +16,16 @@ func main() {
 		os.Exit(0)
 	}
 
+	// Load config
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatal("Failed to load config:", err)
+	}
+	
+	// Allow environment variable to override config
 	contactsDir := os.Getenv("DENOTE_CONTACTS_DIR")
 	if contactsDir == "" {
-		homeDir, err := os.UserHomeDir()
-		if err != nil {
-			log.Fatal("Could not determine home directory:", err)
-		}
-		contactsDir = homeDir + "/Documents/denote"
+		contactsDir = cfg.NotesDirectory
 	}
 
 	m := ui.NewModel(contactsDir)
